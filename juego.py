@@ -1,5 +1,5 @@
-from jugadores import Jugador
-from tablero import Tablero
+from Jugador import Jugador
+from Tablero import Tablero
 
 
 class Juego:

@@ -12,12 +12,19 @@ class Tablero:
             ["","",""]
 
         ]
-    def verificarJugada(x,y,self,):
+    def verificar_Jugada(x,y,self):
+       if self.matriz[x][y]=="":
+        return True
 
-     if x==-1:
+       else:
+        return False
+    
+    def verificar_triqui(self):
+       pass
+    def mostrar_tablero(self):
+       print(self.matriz)
+      
+       
 
-        if not self.matriz[x][y]=="":
-            return False
-        else:
-            return True    
+       
         
