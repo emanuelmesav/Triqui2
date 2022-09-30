@@ -1,20 +1,30 @@
-from typing_extensions import Self
-from Ficha import Ficha
+
+from tablero import Tablero
+from ficha import Ficha
 import random
 
 class Jugador:
 
 
-    def __init__(self):
+    def __init__(self, valor):
 
         self.miFicha=Ficha()
+        self.tipo=valor
    
     def realizar_jugada(self,untablero):
-        x=int(input("Ingrese una fila"))
+        
+        x=-1
+        y=0
 
-        y=int(input("Ingrese una columna"))
+        while untablero.verificar_Jugada(x,y)==False:
+         if self.tipo=="humano":
+          x=int(input("Ingrese una fila"))
+          y=int(input("Ingrese una columna"))
+         else:
+           x=random.randint(0,2)
+           y=random.randint(0,2)
 
-        untablero.matriz[x],[y]=self.miFicha.simbolo
+        untablero.matriz[x][y]=self.miFicha.simbolo
         return untablero
 
     def seleccionar_simbolo(self):

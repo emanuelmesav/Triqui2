@@ -1,25 +1,41 @@
 from Jugador import Jugador
-from Tablero import Tablero
+from tablero import Tablero
 
 
 class Juego:
 
 
     def __init__(self):
+
+        #Primer jugador
          
-         self.miJugador= Jugador()
+         self.miJugador= Jugador("humano")
+        #segundo jugador
+         self.Computador=Jugador("computador")
          self.miTablero= Tablero()
     
     def jugarTriqui(self):
        
-        self.miJugador.miFicha.simbolo="x"
+        self.miJugador.seleccionar_simbolo()
 
-        self.miJugador.realizar_jugada(self.miTablero)  
-        self.miJugador.realizar_jugada(self.miTablero)  
+        if self.miJugador.miFicha.simbolo=='X':
+            self.Computador.miFicha.simbolo='O'
+        else:
+            self.Computador.miFicha.simbolo='X'  
 
-        print(self.miJugador.realizar_jugada)
+        jugadas=0
 
-
-
+        while jugadas<9:
+           self.miJugador.realizar_jugada(self.miTablero)  
+           if self.miTablero.verificar_triqui():
+            print("Ganador")
+            return True
+        self.Computador.realizar_jugada(self.miTablero)
+        if self.miTablero.verificar_triqui():
+            print("Perdedor")
+            return True
+        jugadas=jugadas+1
+           
 miJuego=Juego()
+miJuego.jugarTriqui()
         
