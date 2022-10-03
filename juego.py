@@ -28,16 +28,16 @@ class Juego:
         while jugadas<9:
             self.miJugador.realizar_jugada(self.miTablero)
             if self.miTablero.verificar_triqui():
-               print(self.miTablero.mostrar_tablero())
+               self.miTablero.mostrar_tablero()
                print("Ganador")
                return True
             self.Computador.realizar_jugada(self.miTablero)
             if self.miTablero.verificar_triqui():
-                print(self.miTablero.mostrar_tablero(self))
+                self.miTablero.mostrar_tablero()
                 print("Perdedor")
                 return True
             jugadas=jugadas+1
-            print(self.miTablero.mostrar_tablero())
+            self.miTablero.mostrar_tablero()
            
 miJuego=Juego()
 miJuego.jugarTriqui()

@@ -12,7 +12,9 @@ class Tablero:
             ["","",""]
 
         ]
-        print(self.matriz)
+        for fila in self.matriz:
+
+         print(fila)
     def verificar_Jugada(self,x,y):
        if x==-1:
          return False
@@ -40,7 +42,10 @@ class Tablero:
 
        
     def mostrar_tablero(self):
-       print(self.matriz)
+
+      for fila in self.matriz:
+
+       print(fila)
       
        
 
